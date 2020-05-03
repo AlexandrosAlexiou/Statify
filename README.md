@@ -1,6 +1,7 @@
 # Statify
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.1.
+Developed for the Advanced Topics of Database Technology and Applications course @cs.uoi.gr
 
 ## Development server
 
