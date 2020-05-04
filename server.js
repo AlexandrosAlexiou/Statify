@@ -24,10 +24,10 @@ server.route('/api/timeline-chart:values').get((req, res) => {
   let values = req.params['values'];
   values = values.substring(1);
   values=values.split('+');
-  var country_code = values[0];
-  var indicator_code = values[1];;
-  var period_value =values[2];
-  var period=values[3];
+  const country_code = values[0];
+  const indicator_code = values[1];
+  const period_value =values[2];
+  const period=values[3];
   let query = `select measured.country_code,measured.Measurement,measured.year
     from(
             select years.year
@@ -53,11 +53,11 @@ server.route('/api/timeline-chart:values').get((req, res) => {
 server.route('/api/bar-chart:values').get((req, res) => {
   let values = req.params['values'];
   values = values.substring(1);
-  var vals=values.split('+');
-  var country_code=vals[0];
-  var indicator_code = vals[1];;
-  var period_value =vals[2];
-  var period=vals[3];
+  values=values.split('+');
+  const country_code = values[0];
+  const indicator_code = values[1];;
+  const period_value = values[2];
+  const period = values[3];
   let query = `select ind1.Measurement,wantedYears.year,ind1.country_code
     from(
             select years.year
@@ -81,11 +81,11 @@ server.route('/api/bar-chart:values').get((req, res) => {
 server.route('/api/scatter-plot:values').get((req, res) => {
   let values = req.params['values'];
   values = values.substring(1);
-  var vals=values.split('+');
-  var country_code=vals[0];
-  var indicator_code1 = vals[1];
-  var period_value =vals[2];
-  var period_type=vals[3];
+  values=values.split('+');
+  const country_code = values[0];
+  const indicator_code1 = values[1];
+  const period_value = values[2];
+  const period_type = values[3];
   let query = `select ind1.Measurement,ind1.indicator_code
     from(
             select years.year
