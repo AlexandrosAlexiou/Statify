@@ -117,7 +117,7 @@ server.route('/api/countries').get( (req,res) => {
 
 
 server.route('/api/indicators').get( (req,res) => {
-  let query = `select indicator_name from indicators;`;
+  let query = `select indicator_name from indicators order by indicator_name;`;
   con.query(query, (err,result) => {
     if (err) throw err;
     res.send({result})

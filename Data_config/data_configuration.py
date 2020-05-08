@@ -55,7 +55,8 @@ def create_measurements_xl_file():
                     c2.value == 'SP.POP.2024.FE.5Y' or c2.value == 'SP.DYN.TO65.MA.ZS' or \
                     c2.value == 'NY.GSR.NFCY.CD' or c2.value == 'EN.ATM.CO2E.SF.ZS' or \
                     c2.value == 'EG.ELC.FOSL.ZS' or c2.value == 'MS.MIL.XPND.CD' or \
-                    c2.value == 'NV.MNF.FBTO.ZS.UN' or c2.value == 'EN.URB.LCTY.UR.ZS':
+                    c2.value == 'NV.MNF.FBTO.ZS.UN' or c2.value == 'EN.URB.LCTY.UR.ZS' or \
+                    c2.value == 'BX.GSR.GNFS.CD' or c2.value == 'BM.GSR.GNFS.CD':
                 for columns in range(5, 65):
                     if ws1.cell(rows, columns).value is not None:
                       # writing the read value to destination excel file
@@ -107,7 +108,8 @@ def create_indicators_xl_file():
                 c2.value == 'SP.POP.2024.FE.5Y' or c2.value == 'SP.DYN.TO65.MA.ZS' or \
                 c2.value == 'NY.GSR.NFCY.CD' or c2.value == 'EN.ATM.CO2E.SF.ZS' or \
                 c2.value == 'EG.ELC.FOSL.ZS' or c2.value == 'MS.MIL.XPND.CD' or \
-                c2.value == 'NV.MNF.FBTO.ZS.UN' or c2.value == 'EN.URB.LCTY.UR.ZS':
+                c2.value == 'NV.MNF.FBTO.ZS.UN' or c2.value == 'EN.URB.LCTY.UR.ZS' or \
+                c2.value == 'BX.GSR.GNFS.CD' or c2.value == 'BM.GSR.GNFS.CD':
             ws2.cell(row_number, 1).value = c2.value
 
             ws2.cell(row_number, 2).value = str(c1.value)

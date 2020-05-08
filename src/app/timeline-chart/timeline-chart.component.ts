@@ -54,7 +54,7 @@ export class TimelineChartComponent{
 
   // Graph options
   // Graph options
-  view: any[] = [2000, 1000];
+  view: any[] = [1900, 1000];
   showXAxis = true;
   showYAxis = true;
   gradient = false;
@@ -173,7 +173,7 @@ export class TimelineChartComponent{
     const countries = this.selectedCountries.value;
     const indicatorName = String(this.selectedIndicators.value);
     const yearSpan = String(this.selectedYearSpan.value);
-    console.log(countries);
+    // console.log(countries);
     let indicatorCode: string;
     let indicatorNameFormattedForUrl: string;
     indicatorNameFormattedForUrl = indicatorName.replace(/ /g, '_');
@@ -200,9 +200,9 @@ export class TimelineChartComponent{
           });
           graphData = ({name: country, series: seriesArray});
           this.GraphDataFormat.push(graphData);
-          console.log(this.GraphDataFormat);
         });
     }
+    console.log(this.GraphDataFormat);
     this.yAxisLabel = indicatorName;
     this.progress = false;
     stepper.next();
