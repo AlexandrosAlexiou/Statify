@@ -40,7 +40,7 @@ server.route('/api/timeline-chart:values').get((req, res) => {
             from measurements
             where country_code=\'${country_code}\' AND indicator_code=\'${indicator_code}\'
         )as measured
-    on wantedYears.year=measured.year`;
+    on wantedYears.year=measured.year order by measured.year`;
   //debugger
   con.query(query, function (err, result) {
     if (err) throw err;
@@ -69,7 +69,7 @@ server.route('/api/bar-chart:values').get((req, res) => {
             from measurements
             where measurements.indicator_code =\'${indicator_code}\' AND measurements.country_code=\'${country_code}\'
             )as ind1
-    on wantedYears.year=ind1.year`;
+    on wantedYears.year=ind1.year order by wantedYears.year`;
   con.query(query, function (err, result) {
     if (err) throw err;
     res.send({result});
