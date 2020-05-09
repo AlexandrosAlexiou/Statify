@@ -21,7 +21,7 @@ export interface Multi {
 }
 
 export interface ValueKeyPair{
-  name: number;
+  name: string;
   value: number;
 }
 
@@ -199,7 +199,7 @@ export class TimelineChartComponent{
           const seriesArray: ValueKeyPair[] = [];
           Object.entries(result).forEach(entry => {
             const spansObj = entry[1] as DbKeyPair;
-            const tempKeyPair: ValueKeyPair = ({name: spansObj.year, value: spansObj.measurement});
+            const tempKeyPair: ValueKeyPair = ({name: String(spansObj.year), value: spansObj.measurement});
             seriesArray.push(tempKeyPair);
           });
           graphData = ({name: country, series: seriesArray});
