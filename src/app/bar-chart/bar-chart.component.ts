@@ -74,7 +74,7 @@ export class BarChartComponent{
   gradient = false;
   showLegend = true;
   showXAxisLabel = true;
-  xAxisLabel = 'Year';
+  xAxisLabel = 'Years';
   yAxisLabel: string;
   showYAxisLabel = true;
   timeline = true;

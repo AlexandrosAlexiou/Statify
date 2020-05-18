@@ -61,7 +61,7 @@ export class ScatterPlotComponent  {
   gradient = false;
   showLegend = true;
   showXAxisLabel = true;
-  yAxisLabel = '';
+  yAxisLabel: string;
   showYAxisLabel = true;
   xAxisLabel = 'Years';
   maxRadius = 20;
@@ -218,12 +218,11 @@ export class ScatterPlotComponent  {
             seriesArray.push(tempbubble);
 
           });
-          graphData = ({name: this.selectedIndicators.value[i], series: seriesArray});
+          graphData = ({name: this.selectedCountries.value + ' ' + this.selectedIndicators.value[i], series: seriesArray});
           this.GraphDataFormat.push(graphData);
         });
 
     }
-    this.yAxisLabel = this.selectedCountries.value;
     this.progress = false;
     stepper.next();
   }

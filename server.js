@@ -151,6 +151,7 @@ server.route('/api/spantwenties').get( (req,res) => {
   })
 });
 
+
 server.route('/api/indicator_code:indicator_name').get( (req,res) => {
   let value = req.params['indicator_name'];
   value = value.substring(1);
@@ -163,6 +164,7 @@ server.route('/api/indicator_code:indicator_name').get( (req,res) => {
   })
 });
 
+
 server.route('/api/country_code:country_name').get( (req,res) => {
   let value = req.params['country_name'];
   value = value.substring(1);
@@ -172,6 +174,7 @@ server.route('/api/country_code:country_name').get( (req,res) => {
     res.send({result})
   })
 });
+
 
 const port = process.env.PORT || 3000;
 server.listen(port, err => {

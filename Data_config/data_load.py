@@ -18,14 +18,14 @@ def create_database():
 
         cursor.execute("USE StatisticsDB;")
 
-        cursor.execute("""CREATE TABLE `countries` (`country_code` varchar(100) NOT NULL,
-                                                    `country_name` varchar(200) NOT NULL,
+        cursor.execute("""CREATE TABLE `countries` (`country_code` varchar(3) NOT NULL,
+                                                    `country_name` varchar(50) NOT NULL,
                                                     PRIMARY KEY (`country_code`))
                                                     ENGINE=InnoDB DEFAULT CHARSET=utf8mb4  COLLATE=utf8mb4_0900_ai_ci;""")
         print("Created countries table.")
 
-        cursor.execute("""CREATE TABLE `indicators` (`indicator_code` varchar(200) NOT NULL,
-                                                    `indicator_name` varchar(1000) NOT NULL,
+        cursor.execute("""CREATE TABLE `indicators` (`indicator_code` varchar(50) NOT NULL,
+                                                    `indicator_name` varchar(200) NOT NULL,
                                                     PRIMARY KEY (`indicator_code`))
                                                     ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;""")
         print("Created indicators table.")
@@ -39,9 +39,9 @@ def create_database():
         print("Created years table.")
 
         cursor.execute("""CREATE TABLE `measurements` ( `country_code` varchar(3) NOT NULL,
-                                                        `indicator_code` varchar(20) NOT NULL,
+                                                        `indicator_code` varchar(50) NOT NULL,
                                                         `year` int NOT NULL,
-                                                        `measurement`DOUBLE,
+                                                        `measurement` DOUBLE,
                                                         PRIMARY KEY (`country_code`,`indicator_code`,`year`),
                                                         KEY `indicator_code` (`indicator_code`),
                                                         KEY `year` (`year`),
