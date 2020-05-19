@@ -200,7 +200,6 @@ export class ScatterPlotComponent  {
     const indicatorsNumber = this.selectedIndicators.value.length;
     for (let i = 0; i < indicatorsNumber; i++){
       let indicatorNameFormattedForUrl: string;
-      indicatorNameFormattedForUrl = this.selectedIndicators.value[i].replace(/ /g, '_');
       indicatorNameFormattedForUrl = this.selectedIndicators.value[i].replace(/%/g, '@');
       await this.dataService.getIndicatorCode(indicatorNameFormattedForUrl)
         .then(response => response.json()).then(data => {

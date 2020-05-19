@@ -202,8 +202,7 @@ export class BarChartComponent{
       return;
     }
     const firstIndicatorName = this.selectedFirstIndicator.value;
-    let indicatorNameFormatted = firstIndicatorName.replace(/%/g, '@');
-    indicatorNameFormatted = indicatorNameFormatted.replace(/ /g, '_');
+    const indicatorNameFormatted = firstIndicatorName.replace(/%/g, '@');
     await this.dataService.getIndicatorCode(indicatorNameFormatted).then(response => response.json())
       .then(data => {
         this.firstCountryIndicatorCode = data.result[0].indicator_code;
@@ -246,8 +245,7 @@ export class BarChartComponent{
       return;
     }
     const secondIndicatorName = this.selectedSecondIndicator.value;
-    let indicatorNameFormatted = secondIndicatorName.replace(/%/g, '@');
-    indicatorNameFormatted = indicatorNameFormatted.replace(/ /g, '_');
+    const indicatorNameFormatted = secondIndicatorName.replace(/%/g, '@');
     await this.dataService.getIndicatorCode(indicatorNameFormatted).then(response => response.json())
       .then(data => {
         this.secondCountryIndicatorCode = data.result[0].indicator_code;

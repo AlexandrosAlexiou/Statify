@@ -180,7 +180,6 @@ export class TimelineChartComponent{
     // console.log(countries);
     let indicatorCode: string;
     let indicatorNameFormattedForUrl: string;
-    indicatorNameFormattedForUrl = indicatorName.replace(/ /g, '_');
     indicatorNameFormattedForUrl = indicatorName.replace(/%/g, '@');
     await this.dataService.getIndicatorCode(indicatorNameFormattedForUrl)
       .then(response => response.json()).then(data => {

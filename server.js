@@ -152,7 +152,6 @@ server.route('/api/indicator_code:indicator_name').get( (req,res) => {
   let value = req.params['indicator_name'];
   value = value.substring(1);
   value = value.replace(/@/g, '%');
-  value = value.replace(/_/g, ' ');
   let query = `select indicator_code from indicators where indicators.indicator_name = '${value}'`;
   con.query(query, (err,result) => {
     if (err) throw err;
