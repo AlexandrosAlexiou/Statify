@@ -52,17 +52,17 @@ Run `node server.js` to start the service.
 
 # Python scripts
 
-## The data from the [World Bank](https://data.worldbank.org/country) were prepared accordingly to comply with the Database schema.
+## The data from the [World Bank](https://data.worldbank.org/country) were transformed accordingly to comply with the Database schema.
 Python makes things easier. Data loading, data configuration and database backup becomes a matter of seconds.<br/>
 Furthermore, adding more data to the Database later on is a few lines of code away. <br/>
 The app is scalable, the data selection process is automatically updated to comply with data additions to the Database. ( countries, indicators etc.)
 
 ## ETL process diagrams
-![Transform](https://github.com/AlexandrosAlexiou/Statify/blob/master/src/assets/Transform.jpg)
+![Transform](https://github.com/AlexandrosAlexiou/Statify/blob/master/src/assets/Transform.jpg) <br/>
 
-![Load](https://github.com/AlexandrosAlexiou/Statify/blob/master/src/assets/load.jpg)
+![Load](https://github.com/AlexandrosAlexiou/Statify/blob/master/src/assets/load.jpg) <br/>
 
-![Backup](https://github.com/AlexandrosAlexiou/Statify/blob/master/src/assets/backup.jpg)
+![Backup](https://github.com/AlexandrosAlexiou/Statify/blob/master/src/assets/backup.jpg) <br/>
 ## packages used
 
 - [PyMySQL](https://pypi.org/project/PyMySQL/)
