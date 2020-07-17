@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { DataService } from '../shared/data.service';
+import { DataService } from '../services/data.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 interface Countries {
@@ -200,7 +200,7 @@ export class ScatterPlotComponent  {
     const indicatorsNumber = this.selectedIndicators.value.length;
     for (let i = 0; i < indicatorsNumber; i++){
       let indicatorNameFormattedForUrl: string;
-      indicatorNameFormattedForUrl = this.selectedIndicators.value[i].replace(/%/g, '%25');
+      indicatorNameFormattedForUrl = encodeURI(this.selectedIndicators.value[i]);
       await this.dataService.getIndicatorCode(indicatorNameFormattedForUrl)
         .then(response => response.json()).then(data => {
           indicatorCode = data.result[0].indicator_code;

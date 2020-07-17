@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { DataService } from '../shared/data.service';
+import { DataService } from '../services/data.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 interface Countries {
@@ -32,7 +32,7 @@ interface DbKeyPair {
 @Component({
   selector: 'app-timeline-chart',
   templateUrl: './timeline-chart.component.html',
-  styleUrls: ['./timeline-chart.component.css']
+  styleUrls: ['./timeline-chart.component.css'],
 })
 export class TimelineChartComponent{
   showGraph = false;
@@ -176,7 +176,7 @@ export class TimelineChartComponent{
     // console.log(countries);
     let indicatorCode: string;
     let indicatorNameFormattedForUrl: string;
-    indicatorNameFormattedForUrl = indicatorName.replace(/%/g, '%25');
+    indicatorNameFormattedForUrl = encodeURI(indicatorName);
     await this.dataService.getIndicatorCode(indicatorNameFormattedForUrl)
       .then(response => response.json()).then(data => {
         indicatorCode = data.result[0].indicator_code;

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { DataService } from '../shared/data.service';
+import { DataService } from '../services/data.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 // import { Multi, ValueKeyPair } from '../timeline-chart/timeline-chart.component';
 
@@ -202,7 +202,7 @@ export class BarChartComponent{
       return;
     }
     const firstIndicatorName = this.selectedFirstIndicator.value;
-    const indicatorNameFormatted = firstIndicatorName.replace(/%/g, '%25');
+    const indicatorNameFormatted = encodeURI(firstIndicatorName);
     await this.dataService.getIndicatorCode(indicatorNameFormatted).then(response => response.json())
       .then(data => {
         this.firstCountryIndicatorCode = data.result[0].indicator_code;
@@ -245,7 +245,7 @@ export class BarChartComponent{
       return;
     }
     const secondIndicatorName = this.selectedSecondIndicator.value;
-    const indicatorNameFormatted = secondIndicatorName.replace(/%/g, '%25');
+    const indicatorNameFormatted = encodeURI(secondIndicatorName);
     await this.dataService.getIndicatorCode(indicatorNameFormatted).then(response => response.json())
       .then(data => {
         this.secondCountryIndicatorCode = data.result[0].indicator_code;

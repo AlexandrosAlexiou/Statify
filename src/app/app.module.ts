@@ -4,7 +4,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { DataService } from './shared/data.service';
+import { DataService } from './services/data.service';
 import { HttpClientModule } from '@angular/common/http';
 import { RoutingModule } from './routing/routing.module';
 import { BarChartModule, LineChartModule, BubbleChartModule } from '@swimlane/ngx-charts';

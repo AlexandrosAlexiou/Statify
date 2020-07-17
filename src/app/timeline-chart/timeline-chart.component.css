@@ -1,0 +1,23 @@
+/*.stepper {
+  background-color: #1b1e27;
+}
+
+::ng-deep .mat-step-header .mat-step-label, .mat-step-header .mat-step-optional {
+  color: rgba(255,255,255,1);
+}
+::ng-deep .mat-step-header .mat-step-label.mat-step-label-active {
+  color: rgba(255,255,255,1);
+}
+
+::ng-deep .mat-flat-button.mat-warn, .mat-raised-button.mat-warn, .mat-fab.mat-warn, .mat-mini-fab.mat-warn {
+  background-color: #1ba2ff;
+}
+
+::ng-deep .mat-step-header .mat-step-icon-selected, .mat-step-header .mat-step-icon-state-done, .mat-step-header .mat-step-icon-state-edit {
+  background-color: #1ba2ff;
+  color: #fff;
+}
+
+::ng-deep .mat-progress-bar-fill::after {
+  background-color: #ff4081;
+}*/
