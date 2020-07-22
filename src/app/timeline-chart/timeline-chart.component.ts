@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { DataService } from '../services/data.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import {empty} from 'rxjs';
 
 interface Countries {
   country_name: string;
@@ -22,12 +23,12 @@ export interface Multi {
 
 export interface ValueKeyPair{
   name: string;
-  value: number;
+  value: string;
 }
 
 interface DbKeyPair {
   year: number;
-  measurement: number;
+  measurement: string;
 }
 @Component({
   selector: 'app-timeline-chart',
