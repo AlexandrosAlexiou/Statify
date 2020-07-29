@@ -59,7 +59,7 @@ Run `node server.js` to start the service.
 
 ### Diagrams
 
-![Visualization of the ETL process](https://github.com/AlexandrosAlexiou/Statify/blob/master/src/assets/etl.svg)
+![Visualization of the ETL process](https://github.com/AlexandrosAlexiou/Statify/blob/master/src/assets/etl-process.svg)
 
 
 ### Python packages used
