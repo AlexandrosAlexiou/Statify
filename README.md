@@ -2,12 +2,13 @@
 Developed for the Advanced Topics of Database Technology and Applications course [@cs.uoi.gr](http://www.cs.uoi.gr/en/index.php?menu=m1)
 
 We live in an age where we have more and more data around us, and it is becoming more and more difficult to use them. Simple queries are not enough anymore. Users must also be presented with interesting properties within the data.
-To be able to answer interesting questions and recognize patterns, we need to organize the data into a ( MySQL ) database and build an application around them!
+To be able to answer interesting questions and recognize patterns, we need to organize the data into a database and build an application around them!
 
 ## Application UI
 
 The application UI was built using [Angular Material](https://material.angular.io/guide/getting-started). <br>
 The charts were rendered using the [ngx-charts](https://github.com/swimlane/ngx-charts) framework. <br>
+
 ![Sample Graph](https://github.com/AlexandrosAlexiou/Statify/blob/master/src/assets/sample-graph.png)
 
 ## Application Diagram
@@ -43,8 +44,7 @@ The API connects to the database and serves the data to our Angular app. <br>
 Run `node server.js` to start the service. <br>
 
 v12.16.1
-
-## [npm](https://www.npmjs.com/) packages used
+### [npm](https://www.npmjs.com/) packages used
 - [mysql](https://www.npmjs.com/package/mysql)
 
 - [cors](https://www.npmjs.com/package/cors)
@@ -53,7 +53,25 @@ v12.16.1
 
 - [moment](https://momentjs.com) (used in the logger middleware function)
 
-<br/>
+<br>
+
+## Run the backend on [Docker](https://www.docker.com)
+
+### Installation
+Requirements
+- You need to have [**Docker**](https://www.docker.com/get-started) installed
+
+- Run in the `api` folder to build the Node.js - express app image.
+    ~~~~
+    docker build -t statify/api .
+    ~~~~
+
+- Then deploy the system.
+    ~~~~
+    docker-compose up
+    ~~~~
+
+<br>
 
 # ETL process
 
