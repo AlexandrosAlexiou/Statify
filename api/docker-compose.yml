@@ -1,6 +1,6 @@
 version: "3.2"
 services:
-  nodejs:
+  api:
     build:
       context: .
     image: statify/api
@@ -11,7 +11,7 @@ services:
       - MYSQL_DB=StatisticsDB
     ports:
       - "3000:3000"
-    container_name: statify-nodejs-app
+    container_name: statify-nodejs-api
     depends_on:
       - mysql
     networks:
@@ -28,6 +28,8 @@ services:
       - MYSQL_USER=user
       - MYSQL_PASSWORD=password
       - MYSQL_DATABASE=StatisticsDB
+    volumes:
+      - persistent:/var/lib/mysql
     container_name: statify-mysql
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
@@ -41,4 +43,5 @@ services:
       - PMA_HOST=statify-mysql
       - PMA_PORT= 3306
     container_name: statify-phpmyadmin
-
+volumes:
+  persistent:
