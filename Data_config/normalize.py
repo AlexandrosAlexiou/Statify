@@ -58,24 +58,28 @@ def create_measurements_xl_file():
                     c2.value == 'NV.MNF.FBTO.ZS.UN' or c2.value == 'EN.URB.LCTY.UR.ZS' or \
                     c2.value == 'BX.GSR.GNFS.CD' or c2.value == 'BM.GSR.GNFS.CD':
                 for columns in range(5, 65):
-                    # writing the read value to destination excel file
-                    ws2.cell(row, 1).value = c1.value
-                    ws2.cell(row, 2).value = str(c2.value)
+                  # writing the read value to destination excel file
+                  ws2.cell(row, 1).value = c1.value
+                  ws2.cell(row, 2).value = str(c2.value)
 
-                    # reading year values from source excel file
-                    c3 = ws1.cell(4, columns)
+                  # reading year values from source excel file
+                  c3 = ws1.cell(4, columns)
 
-                    # writing years value to destination excel file
-                    ws2.cell(row, 3).value = c3.value
+                  # writing years value to destination excel file
+                  ws2.cell(row, 3).value = c3.value
 
-                    # reading measurement values from source excel file
-                    c4 = ws1.cell(rows, columns)
+                  # reading measurement values from source excel file
+                  c4 = ws1.cell(rows, columns)
 
+                  if ws1.cell(rows, columns).value is not None:
                     # writing measurement values to destination excel file
                     ws2.cell(row, 4).value = c4.value
+                  else:
+                    # there is no measurement so the value is 0
+                     ws2.cell(row, 4).value = 0
 
-                    # destination file new row
-                    row += 1
+                  # destination file new row
+                  row += 1
     # saving the destination excel file
     wb2.save(str(output_xl_file))
 

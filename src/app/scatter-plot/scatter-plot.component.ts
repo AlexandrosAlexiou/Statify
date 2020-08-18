@@ -118,7 +118,7 @@ export class ScatterPlotComponent  {
     this.step3 = true;
     this.progress = true;
     if (this.selectedIndicators.value === null || this.selectedIndicators.value.length === 0){
-      this.snackBar.open('Please Indicators', 'Dismiss', {
+      this.snackBar.open('Please select indicators', 'Dismiss', {
         duration: 3000,
       });
       this.progress = false;
@@ -176,18 +176,11 @@ export class ScatterPlotComponent  {
     const country = this.selectedCountries.value;
     const yearSpan = String(this.selectedYearSpan.value);
 
-    ///////////////////////////////////////
-    //
-    // Testing inputs before drawing graph
-    //
-    ///////////////////////////////////////
-
-    console.log(this.selectedCountries.value);
-    console.log(this.selectedIndicators.value);
-    console.log(this.selectedYearSpan.value);
-    console.log(yearSpanType);
-    console.log(this.selectedIndicators.value.length);
-
+    // console.log(this.selectedCountries.value);
+    // console.log(this.selectedIndicators.value);
+    // console.log(this.selectedYearSpan.value);
+    // console.log(yearSpanType);
+    // console.log(this.selectedIndicators.value.length);
 
     let countryCode: string;
     let indicatorCode: string;

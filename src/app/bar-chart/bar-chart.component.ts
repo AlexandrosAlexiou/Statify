@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { DataService } from '../services/data.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
-// import { Multi, ValueKeyPair } from '../timeline-chart/timeline-chart.component';
 
 interface Countries {
   country_name: string;
@@ -183,7 +182,7 @@ export class BarChartComponent{
         this.firstCountryCode = data.result[0].country_code;
       });
     await this.getIndicators();
-    this.Countries = this.Countries.filter( country => country !== this.selectedFirstCountry.value);
+    // this.Countries = this.Countries.filter( country => country !== this.selectedFirstCountry.value);
     // console.log(this.Indicators);
     this.progress = false;
     this.progressBarValue = 30;
